@@ -1,0 +1,23 @@
+function []=plotHH(count)
+bg=biograph(count);
+set(bg.nodes,'shape','circle','color',[1,1,1],'lineColor',[0,0,0]);
+set(bg,'layoutType','radial');
+set(bg.nodes,'shape','circle','color',[1,1,1],'lineColor',[0,0,0]);
+bg.showWeights='on';
+set(bg.nodes,'textColor',[0,0,0],'lineWidth',2,'fontsize',9,'Size',[20,20]);
+set(bg,'arrowSize',7,'edgeFontSize',6);
+get(bg.nodes,'position')
+dolayout(bg);
+ bg.nodes(1).position=[0,100];
+ bg.nodes(2).position=[0,0];
+ bg.nodes(3).position=[100,100];
+ bg.nodes(4).position=[100,0];
+ bg.nodes(5).position=[200,100];
+ bg.nodes(6).position=[200,0];
+ bg.nodes(7).position=[300,100];
+ bg.nodes(8).position=[300,0];
+ bg.nodes(9).position=[400,100];
+ bg.nodes(10).position=[400,0];
+ dolayout(bg,'pathsonly',true);
+ view(bg)
+end
